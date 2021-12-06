@@ -95,13 +95,13 @@ struct MV_V_Dot_Functor {
         m_x(x),
         m_y(y),
         reverseOrder_(reverseOrder) {
-    static_assert(Kokkos::Impl::is_view<RV>::value,
+    static_assert(Kokkos::is_view<RV>::value,
                   "KokkosBlas::Impl::"
                   "MV_V_Dot_Functor: R is not a Kokkos::View.");
-    static_assert(Kokkos::Impl::is_view<XMV>::value,
+    static_assert(Kokkos::is_view<XMV>::value,
                   "KokkosBlas::Impl::"
                   "MV_V_Dot_Functor: X is not a Kokkos::View.");
-    static_assert(Kokkos::Impl::is_view<YV>::value,
+    static_assert(Kokkos::is_view<YV>::value,
                   "KokkosBlas::Impl::"
                   "MV_V_Dot_Functor: Y is not a Kokkos::View.");
     static_assert(std::is_same<typename RV::value_type,
@@ -211,13 +211,13 @@ struct MV_Dot_Right_FunctorVector {
 
   MV_Dot_Right_FunctorVector(const RV& r, const XMV& x, const YMV& y)
       : value_count(x.extent(1)), m_r(r), m_x(x), m_y(y) {
-    static_assert(Kokkos::Impl::is_view<RV>::value,
+    static_assert(Kokkos::is_view<RV>::value,
                   "KokkosBlas::Impl::"
                   "MV_Dot_Right_FunctorVector: R is not a Kokkos::View.");
-    static_assert(Kokkos::Impl::is_view<XMV>::value,
+    static_assert(Kokkos::is_view<XMV>::value,
                   "KokkosBlas::Impl::"
                   "MV_Dot_Right_FunctorVector: X is not a Kokkos::View.");
-    static_assert(Kokkos::Impl::is_view<YMV>::value,
+    static_assert(Kokkos::is_view<YMV>::value,
                   "KokkosBlas::Impl::"
                   "MV_Dot_Right_FunctorVector: Y is not a Kokkos::View.");
     static_assert(std::is_same<typename RV::value_type,
@@ -317,13 +317,13 @@ struct MV_Dot_Right_FunctorUnroll {
 
   MV_Dot_Right_FunctorUnroll(const RV& r, const XMV& x, const YMV& y)
       : value_count(x.extent(1)), m_r(r), m_x(x), m_y(y) {
-    static_assert(Kokkos::Impl::is_view<RV>::value,
+    static_assert(Kokkos::is_view<RV>::value,
                   "KokkosBlas::Impl::"
                   "MV_Dot_Right_FunctorUnroll: R is not a Kokkos::View.");
-    static_assert(Kokkos::Impl::is_view<XMV>::value,
+    static_assert(Kokkos::is_view<XMV>::value,
                   "KokkosBlas::Impl::"
                   "MV_Dot_Right_FunctorUnroll: X is not a Kokkos::View.");
-    static_assert(Kokkos::Impl::is_view<YMV>::value,
+    static_assert(Kokkos::is_view<YMV>::value,
                   "KokkosBlas::Impl::"
                   "MV_Dot_Right_FunctorUnroll: Y is not a Kokkos::View.");
     static_assert(std::is_same<typename RV::value_type,
